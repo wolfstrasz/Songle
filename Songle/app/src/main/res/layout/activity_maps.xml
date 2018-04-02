@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.boyanyotov.songle.Activities.MapsActivity">
+
+
+    <LinearLayout
+        android:id="@+id/ll_MapsActivity"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:visibility="visible">
+
+        <LinearLayout
+            android:id="@+id/ll_maps_menu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center_vertical"
+            android:visibility="visible">
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" >
+            </Space>
+            <Button
+                android:id="@+id/backBtn"
+                android:background="@drawable/btn_levels_dark"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text=""/>
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" >
+            </Space>
+            <Button
+                android:id="@+id/openLevelMenuBtn"
+                android:background="@drawable/btn_menu_dark"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="" />
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" >
+            </Space>
+            <Button
+                android:id="@+id/openLyricsBtn"
+                android:background="@drawable/btn_lyrics_dark"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="" />
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" >
+            </Space>
+            <Button
+                android:id="@+id/openMapsBtn"
+                android:background="@drawable/btn_map_dark"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="" />
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" >
+            </Space>
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/fr_maps"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+
+            <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:map="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:id="@+id/map"
+                android:name="com.google.android.gms.maps.SupportMapFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context="com.example.boyanyotov.songle.Activities.MapsActivity" />
+        </FrameLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_lyricsmenu"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:background="#111111">
+
+            <TextView
+                android:id="@+id/lyricsTitleTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Lyrics for song: "
+                android:textAlignment="center"
+                android:textColor="#ffffff"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:id="@+id/ll_lyrics"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/cl_levelmenu"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#85b6ff"
+            android:visibility="visible">
+
+            <TextView
+                android:id="@+id/levelNameTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:text="LEVEL:SONG"
+                android:textColor="#ffffff"
+                android:textSize="24sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="8dp" />
+
+            <TextView
+                android:id="@+id/levelTitleTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="LEVEL NAME"
+                android:textColor="#ffffff"
+                android:textSize="18sp"
+                android:layout_marginRight="8dp"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintTop_toBottomOf="@+id/levelNameTxt" />
+
+            <TextView
+                android:id="@+id/levelArtistTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="LEVEL ARTIST"
+                android:textColor="#ffffff"
+                android:textSize="18sp"
+                android:layout_marginRight="7dp"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginEnd="7dp"
+                android:layout_marginTop="0dp"
+                app:layout_constraintTop_toBottomOf="@+id/levelTitleTxt" />
+
+            <TextView
+                android:id="@+id/Txt1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SONG NAME:"
+                android:textColor="#ffffff"
+                android:textSize="18sp"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/levelNameTxt" />
+
+            <TextView
+                android:id="@+id/Txt2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SONG ARTIST:"
+                android:textColor="#ffffff"
+                android:textSize="18sp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@+id/Txt1"
+                android:layout_marginLeft="8dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginStart="8dp" />
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/textInputLayout"
+                android:background="#777777"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@+id/levelArtistTxt"
+                android:layout_marginLeft="8dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginRight="8dp"
+                app:layout_constraintRight_toRightOf="parent">
+
+                <EditText
+                    android:id="@+id/guessTxt"
+                    android:layout_width="368dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="#777777"
+                    android:hint="Type name of song to guess"
+                    android:textAlignment="center"
+                    android:textColor="#ffffff"
+                    tools:layout_editor_absoluteX="8dp"
+                    tools:layout_editor_absoluteY="240dp" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <Button
+                android:id="@+id/guessBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
+                android:layout_marginRight="8dp"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginLeft="8dp"
+                app:layout_constraintLeft_toLeftOf="parent" />
+
+            <TextView
+                android:id="@+id/hintPointsTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hint Points"
+                android:textColor="#ffffff"
+                android:textSize="18sp"
+                android:layout_marginRight="8dp"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintBottom_toTopOf="@+id/hintTypeTxt"
+                android:layout_marginEnd="8dp" />
+
+            <TextView
+                android:id="@+id/hintTypeTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hint Type"
+                android:textColor="#ffffff"
+                android:textSize="18sp"
+                android:layout_marginRight="5dp"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintBottom_toTopOf="@+id/hintCostTxt"
+                android:layout_marginEnd="5dp" />
+
+            <TextView
+                android:id="@+id/Txt3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="HINT POINTS:"
+                android:textColor="#ffffff"
+                android:textSize="18sp"
+                android:layout_marginLeft="8dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintBottom_toTopOf="@+id/Txt4"
+                android:layout_marginStart="8dp" />
+
+            <TextView
+                android:id="@+id/Txt4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="HINT TYPE:"
+                android:textColor="#ffffff"
+                android:textSize="18sp"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintBottom_toTopOf="@+id/Txt5"
+                android:layout_marginLeft="8dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginStart="8dp" />
+
+            <Button
+                android:id="@+id/buyBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:text=""
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp" />
+
+            <TextView
+                android:id="@+id/Txt5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="HINT COST:"
+                android:textColor="#ffffff"
+                android:textSize="18sp"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintBottom_toTopOf="@+id/buyBtn"
+                android:layout_marginLeft="8dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginStart="8dp" />
+
+            <TextView
+                android:id="@+id/hintCostTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hint Cost"
+                android:textColor="#ffffff"
+                android:textSize="18sp"
+                android:layout_marginRight="8dp"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintBottom_toTopOf="@+id/buyBtn"
+                android:layout_marginEnd="8dp" />
+
+
+
+
+        </android.support.constraint.ConstraintLayout>
+    </LinearLayout>
+
+
+</android.support.design.widget.CoordinatorLayout>
